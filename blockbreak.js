@@ -253,7 +253,7 @@ var livesLabel = container.insert(new Q.UI.Text({x:150, y: 15, size: 14,
 
   Q.load(['blockbreak.png','blockbreak.json', 'powerdown.wav', 'hit.wav', 'brickDeath.wav'], function() {
     Q.compileSheets('blockbreak.png','blockbreak.json');  
-	Q.sheet("ball", "blockbreak.png", { tilew: 20, tileh: 20, sy: 0, sx: 0 });
+	Q.sheet("ball", "blockbreak.png", { tilew: 20, tileh: 18, sy: 0, sx: 0 });
 	Q.sheet("block", "blockbreak.png", { tilew: 40, tileh: 20, sy: 20, sx: 0 });
 	Q.sheet("paddle", "blockbreak.png", { tilew: 60, tileh: 20, sy: 40, sx: 0 });		 		 
     Q.stageScene('title');
