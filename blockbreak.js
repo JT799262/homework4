@@ -5,6 +5,7 @@ $(function() {
 					 .touch()
 					 .enableSound();
 
+  Q.input.mouseControls();
   Q.input.keyboardControls();
   Q.input.touchControls({ 
             controls:  [ ['left','<' ],[],[],[],['right','>' ] ]
