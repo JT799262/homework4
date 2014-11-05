@@ -5,7 +5,9 @@ $(function() {
 					 .touch()
 					 .enableSound();
 
-  Q.input.keyboardControls();
+	Q.input.mouseControls({ cursor: "on" });
+	Q.input.keyboardControls();
+
   Q.input.touchControls({ 
             controls:  [ ['left','<' ],[],[],[],['right','>' ] ]
   });
@@ -31,11 +33,17 @@ $(function() {
       } else if(Q.inputs['right']) {
         this.p.x += dt * this.p.speed;
       }
+	  else if(Q.inputs['mouseX'] != 0) {
+		this.p.x = Q.inputs['mouseX'];
+		Q.inputs['mouseX'] = 0;
+		}
+		
       if(this.p.x < 30) { 
         this.p.x = 30;
       } else if(this.p.x > Q.width - 30) { 
         this.p.x = Q.width - 30;
       }
+	  
     }
   });
 
@@ -139,8 +147,15 @@ var label = container.insert(new Q.UI.Text({x:0, y: 100, size: 16,
 var label = container.insert(new Q.UI.Text({x:5, y: 140, size: 13,
     label: "Left arrow key moves paddle left.", color: "white" }));	
 	
-var label = container.insert(new Q.UI.Text({x:5, y: 190, size: 13,
+var label = container.insert(new Q.UI.Text({x:5, y: 165, size: 13,
     label: "Right arrow key moves paddle right.", color: "white" }));	
+	
+var label = container.insert(new Q.UI.Text({x:5, y: 230, size: 16,
+    label: "Alternate Controls", color: "white" }));
+
+var label = container.insert(new Q.UI.Text({x:5, y: 255, size: 13,
+    label: "Use mouse to move paddle left or right.", color: "white" }));		
+	
  
   // When the button is clicked, clear all the stages
   // and restart the game.
